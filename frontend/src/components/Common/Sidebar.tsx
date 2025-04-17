@@ -40,6 +40,7 @@ const Sidebar = () => {
             position="absolute"
             zIndex="100"
             m={4}
+            colorPalette="linkedin.primary"
           >
             <FaBars />
           </IconButton>
@@ -59,8 +60,9 @@ const Sidebar = () => {
                   gap={4}
                   px={4}
                   py={2}
+                  _hover={{ bg: "linkedin.lightGray" }}
                 >
-                  <FiLogOut />
+                  <FiLogOut color="#0A66C2" />
                   <Text>Log Out</Text>
                 </Flex>
               </Box>
@@ -80,7 +82,7 @@ const Sidebar = () => {
       <Box
         display={{ base: "none", md: "flex" }}
         position="sticky"
-        bg="bg.subtle"
+        bg="linkedin.lightGray"
         top={0}
         minW="xs"
         h="100vh"

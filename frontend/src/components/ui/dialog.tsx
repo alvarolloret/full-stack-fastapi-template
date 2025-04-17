@@ -17,6 +17,7 @@ export const DialogContent = React.forwardRef<
     portalled = true,
     portalRef,
     backdrop = true,
+    colorPalette = "linkedin.primary",
     ...rest
   } = props
 
@@ -24,7 +25,7 @@ export const DialogContent = React.forwardRef<
     <Portal disabled={!portalled} container={portalRef}>
       {backdrop && <ChakraDialog.Backdrop />}
       <ChakraDialog.Positioner>
-        <ChakraDialog.Content ref={ref} {...rest} asChild={false}>
+        <ChakraDialog.Content ref={ref} colorPalette={colorPalette} {...rest} asChild={false}>
           {children}
         </ChakraDialog.Content>
       </ChakraDialog.Positioner>
@@ -44,7 +45,7 @@ export const DialogCloseTrigger = React.forwardRef<
       {...props}
       asChild
     >
-      <CloseButton size="sm" ref={ref}>
+      <CloseButton size="sm" ref={ref} colorPalette="linkedin.primary">
         {props.children}
       </CloseButton>
     </ChakraDialog.CloseTrigger>

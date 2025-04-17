@@ -65,6 +65,11 @@ function Login() {
         justifyContent="center"
         gap={4}
         centerContent
+        bg="white"
+        boxShadow="md"
+        borderRadius="md"
+        p={8}
+        mt={8}
       >
         <Image
           src={Logo}
@@ -77,8 +82,9 @@ function Login() {
         <Field
           invalid={!!errors.username}
           errorText={errors.username?.message || !!error}
+          colorPalette="linkedin.primary"
         >
-          <InputGroup w="100%" startElement={<FiMail />}>
+          <InputGroup w="100%" startElement={<FiMail color="#0A66C2" />} colorPalette="linkedin.primary">
             <Input
               id="username"
               {...register("username", {
@@ -87,25 +93,36 @@ function Login() {
               })}
               placeholder="Email"
               type="email"
+              focusBorderColor="linkedin.primary"
             />
           </InputGroup>
         </Field>
         <PasswordInput
           type="password"
-          startElement={<FiLock />}
+          startElement={<FiLock color="#0A66C2" />}
           {...register("password", passwordRules())}
           placeholder="Password"
           errors={errors}
+          colorPalette="linkedin.primary"
+          focusBorderColor="linkedin.primary"
         />
-        <RouterLink to="/recover-password" className="main-link">
+        <RouterLink to="/recover-password" style={{ color: "#0A66C2", fontWeight: "bold" }}>
           Forgot Password?
         </RouterLink>
-        <Button variant="solid" type="submit" loading={isSubmitting} size="md">
+        <Button 
+          variant="solid" 
+          type="submit" 
+          loading={isSubmitting} 
+          size="md"
+          bg="linkedin.primary"
+          color="white"
+          _hover={{ bg: "linkedin.dark" }}
+        >
           Log In
         </Button>
         <Text>
           Don't have an account?{" "}
-          <RouterLink to="/signup" className="main-link">
+          <RouterLink to="/signup" style={{ color: "#0A66C2", fontWeight: "bold" }}>
             Sign Up
           </RouterLink>
         </Text>

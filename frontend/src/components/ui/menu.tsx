@@ -11,11 +11,11 @@ interface MenuContentProps extends ChakraMenu.ContentProps {
 
 export const MenuContent = React.forwardRef<HTMLDivElement, MenuContentProps>(
   function MenuContent(props, ref) {
-    const { portalled = true, portalRef, ...rest } = props
+    const { portalled = true, portalRef, colorPalette = "linkedin.primary", ...rest } = props
     return (
       <Portal disabled={!portalled} container={portalRef}>
         <ChakraMenu.Positioner>
-          <ChakraMenu.Content ref={ref} {...rest} />
+          <ChakraMenu.Content ref={ref} colorPalette={colorPalette} {...rest} />
         </ChakraMenu.Positioner>
       </Portal>
     )
@@ -37,14 +37,15 @@ export const MenuCheckboxItem = React.forwardRef<
   HTMLDivElement,
   ChakraMenu.CheckboxItemProps
 >(function MenuCheckboxItem(props, ref) {
+  const { colorPalette = "linkedin.primary", ...rest } = props
   return (
-    <ChakraMenu.CheckboxItem ps="8" ref={ref} {...props}>
+    <ChakraMenu.CheckboxItem ps="8" ref={ref} colorPalette={colorPalette} {...rest}>
       <AbsoluteCenter axis="horizontal" insetStart="4" asChild>
         <ChakraMenu.ItemIndicator>
           <LuCheck />
         </ChakraMenu.ItemIndicator>
       </AbsoluteCenter>
-      {props.children}
+      {rest.children}
     </ChakraMenu.CheckboxItem>
   )
 })
@@ -53,9 +54,9 @@ export const MenuRadioItem = React.forwardRef<
   HTMLDivElement,
   ChakraMenu.RadioItemProps
 >(function MenuRadioItem(props, ref) {
-  const { children, ...rest } = props
+  const { children, colorPalette = "linkedin.primary", ...rest } = props
   return (
-    <ChakraMenu.RadioItem ps="8" ref={ref} {...rest}>
+    <ChakraMenu.RadioItem ps="8" ref={ref} colorPalette={colorPalette} {...rest}>
       <AbsoluteCenter axis="horizontal" insetStart="4" asChild>
         <ChakraMenu.ItemIndicator>
           <LuCheck />

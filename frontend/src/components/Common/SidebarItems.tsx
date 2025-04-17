@@ -37,12 +37,15 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
         px={4}
         py={2}
         _hover={{
-          background: "gray.subtle",
+          background: "linkedin.lightGray",
+          color: "linkedin.dark",
         }}
         alignItems="center"
         fontSize="sm"
+        borderRadius="md"
+        transition="all 0.2s"
       >
-        <Icon as={icon} alignSelf="center" />
+        <Icon as={icon} alignSelf="center" color="linkedin.primary" />
         <Text ml={2}>{title}</Text>
       </Flex>
     </RouterLink>
@@ -50,7 +53,7 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
 
   return (
     <>
-      <Text fontSize="xs" px={4} py={2} fontWeight="bold">
+      <Text fontSize="xs" px={4} py={2} fontWeight="bold" color="linkedin.darkGray">
         Menu
       </Text>
       <Box>{listItems}</Box>

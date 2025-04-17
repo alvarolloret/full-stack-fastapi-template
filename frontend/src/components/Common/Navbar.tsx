@@ -14,7 +14,7 @@ function Navbar() {
       position="sticky"
       color="white"
       align="center"
-      bg="bg.muted"
+      bg="linkedin.primary"
       w="100%"
       top={0}
       p={4}

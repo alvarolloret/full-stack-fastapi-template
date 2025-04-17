@@ -19,8 +19,20 @@ export const system = createSystem(defaultConfig, {
   theme: {
     tokens: {
       colors: {
+        linkedin: {
+          primary: { value: "#0A66C2" },
+          light: { value: "#70B5F9" },
+          green: { value: "#057642" },
+          orange: { value: "#E7A33E" },
+          dark: { value: "#004182" },
+          black: { value: "#000000" },
+          white: { value: "#FFFFFF" },
+          darkGray: { value: "#333333" },
+          mediumGray: { value: "#86888A" },
+          lightGray: { value: "#F3F2EF" },
+        },
         ui: {
-          main: { value: "#009688" },
+          main: { value: "#0A66C2" }, // Changed from #009688 to LinkedIn primary blue
         },
       },
     },

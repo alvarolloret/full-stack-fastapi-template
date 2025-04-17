@@ -6,14 +6,30 @@ export const buttonRecipe = defineRecipe({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    colorPalette: "teal",
+    colorPalette: "linkedin.primary", // Updated to use LinkedIn primary blue
   },
   variants: {
     variant: {
       ghost: {
         bg: "transparent",
         _hover: {
-          bg: "gray.100",
+          bg: "linkedin.lightGray", // Updated to use LinkedIn light gray
+        },
+      },
+      solid: {
+        bg: "linkedin.primary",
+        color: "white",
+        _hover: {
+          bg: "linkedin.dark", // Darker blue on hover
+        },
+      },
+      outline: {
+        bg: "transparent",
+        borderColor: "linkedin.primary",
+        borderWidth: "1px",
+        color: "linkedin.primary",
+        _hover: {
+          bg: "linkedin.lightGray",
         },
       },
     },

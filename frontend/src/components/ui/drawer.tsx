@@ -12,11 +12,11 @@ export const DrawerContent = React.forwardRef<
   HTMLDivElement,
   DrawerContentProps
 >(function DrawerContent(props, ref) {
-  const { children, portalled = true, portalRef, offset, ...rest } = props
+  const { children, portalled = true, portalRef, offset, colorPalette = "linkedin.primary", ...rest } = props
   return (
     <Portal disabled={!portalled} container={portalRef}>
       <ChakraDrawer.Positioner padding={offset}>
-        <ChakraDrawer.Content ref={ref} {...rest} asChild={false}>
+        <ChakraDrawer.Content ref={ref} colorPalette={colorPalette} {...rest} asChild={false}>
           {children}
         </ChakraDrawer.Content>
       </ChakraDrawer.Positioner>
@@ -36,7 +36,7 @@ export const DrawerCloseTrigger = React.forwardRef<
       {...props}
       asChild
     >
-      <CloseButton size="sm" ref={ref} />
+      <CloseButton size="sm" ref={ref} colorPalette="linkedin.primary" />
     </ChakraDrawer.CloseTrigger>
   )
 })

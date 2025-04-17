@@ -19,9 +19,22 @@ const UserMenu = () => {
       <Flex>
         <MenuRoot>
           <MenuTrigger asChild p={2}>
-            <Button data-testid="user-menu" variant="solid" maxW="sm" truncate>
-              <FaUserAstronaut fontSize="18" />
-              <Text>{user?.full_name || "User"}</Text>
+            <Button 
+              data-testid="user-menu" 
+              variant="solid" 
+              maxW="sm" 
+              truncate
+              colorPalette="linkedin.dark"
+              bg="white"
+              color="linkedin.dark"
+              borderWidth="1px"
+              borderColor="white"
+              _hover={{
+                bg: "linkedin.lightGray"
+              }}
+            >
+              <FaUserAstronaut fontSize="18" color="#004182" />
+              <Text ml={2}>{user?.full_name || "User"}</Text>
             </Button>
           </MenuTrigger>
 
@@ -33,8 +46,11 @@ const UserMenu = () => {
                 gap={2}
                 py={2}
                 style={{ cursor: "pointer" }}
+                _hover={{
+                  bg: "linkedin.lightGray"
+                }}
               >
-                <FiUser fontSize="18px" />
+                <FiUser fontSize="18px" color="#0A66C2" />
                 <Box flex="1">My Profile</Box>
               </MenuItem>
             </Link>
@@ -45,8 +61,11 @@ const UserMenu = () => {
               py={2}
               onClick={handleLogout}
               style={{ cursor: "pointer" }}
+              _hover={{
+                bg: "linkedin.lightGray"
+              }}
             >
-              <FiLogOut />
+              <FiLogOut color="#0A66C2" />
               Log Out
             </MenuItem>
           </MenuContent>

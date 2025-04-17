@@ -14,7 +14,7 @@ export const ItemActionsMenu = ({ item }: ItemActionsMenuProps) => {
   return (
     <MenuRoot>
       <MenuTrigger asChild>
-        <IconButton variant="ghost" color="inherit">
+        <IconButton variant="ghost" color="inherit" colorPalette="linkedin.primary">
           <BsThreeDotsVertical />
         </IconButton>
       </MenuTrigger>

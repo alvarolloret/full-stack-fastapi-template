@@ -22,6 +22,7 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
       children,
       startOffset = "6px",
       endOffset = "6px",
+      colorPalette = "linkedin.primary",
       ...rest
     } = props
 
@@ -29,9 +30,9 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
       React.Children.only<React.ReactElement<InputElementProps>>(children)
 
     return (
-      <Group ref={ref} {...rest}>
+      <Group ref={ref} colorPalette={colorPalette} {...rest}>
         {startElement && (
-          <InputElement pointerEvents="none" {...startElementProps}>
+          <InputElement pointerEvents="none" colorPalette={colorPalette} {...startElementProps}>
             {startElement}
           </InputElement>
         )}
@@ -40,10 +41,11 @@ export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
             ps: `calc(var(--input-height) - ${startOffset})`,
           }),
           ...(endElement && { pe: `calc(var(--input-height) - ${endOffset})` }),
+          colorPalette: colorPalette,
           ...children.props,
         })}
         {endElement && (
-          <InputElement placement="end" {...endElementProps}>
+          <InputElement placement="end" colorPalette={colorPalette} {...endElementProps}>
             {endElement}
           </InputElement>
         )}

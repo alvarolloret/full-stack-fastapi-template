@@ -60,6 +60,7 @@ export const ColorModeButton = React.forwardRef<
         aria-label="Toggle color mode"
         size="sm"
         ref={ref}
+        colorPalette="linkedin.primary"
         {...props}
         css={{
           _icon: {
@@ -81,7 +82,7 @@ export const LightMode = React.forwardRef<HTMLSpanElement, SpanProps>(
         color="fg"
         display="contents"
         className="chakra-theme light"
-        colorPalette="gray"
+        colorPalette="linkedin.primary"
         colorScheme="light"
         ref={ref}
         {...props}
@@ -97,7 +98,7 @@ export const DarkMode = React.forwardRef<HTMLSpanElement, SpanProps>(
         color="fg"
         display="contents"
         className="chakra-theme dark"
-        colorPalette="gray"
+        colorPalette="linkedin.primary"
         colorScheme="dark"
         ref={ref}
         {...props}
